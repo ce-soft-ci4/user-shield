@@ -14,7 +14,7 @@ class UserModule extends BaseService
     public static function initialize()
     {
         // Enregistrement des espaces de noms pour les vues
-        $viewsPath = __DIR__ . '/Views';
+        /*$viewsPath = __DIR__ . '/Views';
         Services::renderer()->setPath($viewsPath);
 
         // Enregistrement des routes
@@ -23,6 +23,12 @@ class UserModule extends BaseService
 
         // Enregistrement des filtres
         Services::filters()->add('usermodule', \UserShield\UserModule\Filters\UserModuleFilter::class);
+
+        // Enregistrement des fichiers de langue
+        $locale = service('request')->getLocale();
+        $langPath = __DIR__ . '/Language/';
+        service('language')->addNamespace('usermodule', $langPath);
+        */
     }
 
     /**
