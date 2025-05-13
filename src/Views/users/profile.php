@@ -1,16 +1,16 @@
 <?= $this->extend('Views\layout') ?>
 
 <?= $this->section('title') ?>
-Mon profil
+<?= lang('User.profile') ?>
 <?= $this->endSection() ?>
 
 <?= $this->section('h1') ?>
-Mon profil
+<?= lang('User.profile') ?>
 <?= $this->endSection() ?>
 
 <?= $this->section('subtitle') ?>
 <div class="">
-    <a href="<?= site_url('users') ?>" class="btn btn-primary">retour à la liste des utilisateurs</a>
+    <a href="<?= site_url('users') ?>" class="btn btn-primary"><?= lang('User.btn_return_users') ?></a>
 </div>
 <?= $this->endSection() ?>
 

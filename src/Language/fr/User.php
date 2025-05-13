@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 return [
-
+    // titles
     'reset_password'            => "Réinitialiser le mot de passe",
     'create'                    => "Ajouter un utilisateur",
     'edit'                      => "Modifier un utilisateur",
     'list'                      => "Liste des utilisateurs",
+    'profile'                    => "Mon profil",
 
     'useForgotPassword'         => "Réinitialiser le mot de passe",
     'if_exists'                 => "Si votre email est enregistré, vous recevrez un lien de réinitialisation.",
@@ -39,6 +40,7 @@ return [
     'btn_cancel'                => "Annuler",
     'btn_reset'                 => "Envoyer le lien de réinitialisation",
     'btn_return_login'          => "Retour à la connexion",
+    'btn_return_users'          => "Retour à la liste des utilisateurs",
 
     // confirm
     'confirm_delete'            => "Êtes-vous sûr de vouloir supprimer cet utilisateur ?",

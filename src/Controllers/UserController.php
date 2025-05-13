@@ -5,24 +5,11 @@ namespace UserShield\UserModule\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Shield\Entities\User;
 use Psr\Log\LoggerInterface;
 use UserShield\UserModule\UserModule;
 use CodeIgniter\Events\Events;
 
-/*use CodeIgniter\CodeIgniter;
-use CodeIgniter\Controller;
-use CodeIgniter\HTTP\RequestInterface;
-use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\Shield\Entities\User;
-use CodeIgniter\Shield\Models\UserIdentityModel;
-use function App\Controllers\auth;
-use function App\Controllers\config;
-use function App\Controllers\lang;
-use function App\Controllers\log_message;
-use function App\Controllers\redirect;
-use function App\Controllers\service;
-use function App\Controllers\view;
-*/
 /**
  * UserController
  * @author Christel Ehrhart - https://ce-soft.info
@@ -37,24 +24,12 @@ class UserController extends BaseController
     protected $users;
     protected $groups;
 
-
     /**
-     * UserController constructor.
+     * Constructor
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @param LoggerInterface $logger
      */
-    /*public function __construct()
-    {
-        // Charge tous les helpers nécessaires
-        helper(['service', 'config', 'auth', 'form', 'view']);
-
-        $this->users    = \Config\Services::auth(true)->getProvider();
-        $AuthGroups     = new \Config\AuthGroups();
-        $this->groups   = $AuthGroups->groups;
-        //$this->groups   =  config('Config\AuthGroups')->groups;
-        //$this->users    = auth()->getProvider();
-        //$this->groups   = config('Config\AuthGroups')->groups;
-        var_dump(view());
-    }*/
-
     public function initController(
         RequestInterface $request,
         ResponseInterface $response,
@@ -84,7 +59,7 @@ class UserController extends BaseController
         ];
 
         // Get the view
-        return view('\UserShield\UserModule\Views\users\index', $data);
+        return view('users\index', $data);
     }
 
     /**
@@ -352,6 +327,7 @@ class UserController extends BaseController
      */
     public function profile()
     {
+        echo 'ici';
         // Get the user
         $user = auth()->user();
 

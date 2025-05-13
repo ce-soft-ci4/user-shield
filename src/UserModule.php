@@ -6,6 +6,11 @@ use CodeIgniter\Config\BaseService;
 use CodeIgniter\Filters\FilterInterface;
 use Config\Services;
 
+/**
+ * UserModule
+ *
+ * @package UserShield\UserModule
+ */
 class UserModule extends BaseService
 {
     /**
@@ -13,31 +18,8 @@ class UserModule extends BaseService
      */
     public static function initialize()
     {
-        // Enregistrement des espaces de noms pour les vues
-        /*$viewsPath = __DIR__ . '/Views';
-        Services::renderer()->setPath($viewsPath);
-
-        // Enregistrement des routes
-        $routes = Services::routes();
-        require __DIR__ . '/Config/Routes.php';
-
-        // Enregistrement des filtres
-        Services::filters()->add('usermodule', \UserShield\UserModule\Filters\UserModuleFilter::class);
-
-        // Enregistrement des fichiers de langue
-        $locale = service('request')->getLocale();
-        $langPath = __DIR__ . '/Language/';
-        service('language')->addNamespace('usermodule', $langPath);
-        */
+        $viewsPath = __DIR__ . '/Views';
+        Services::renderer($viewsPath);
     }
 
-    /**
-     * Charge les migrations nécessaires.
-     */
-    /*public static function migrate()
-    {
-        $migrate = Services::migrations();
-        $migrate->setNamespace('UserShield\UserModule');
-        $migrate->latest();
-    }*/
 }
