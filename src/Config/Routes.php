@@ -21,7 +21,7 @@ $routes->group('', ['filter' => 'group:admin', 'namespace' => 'UserShield\UserMo
     $routes->get('users/delete/(:num)', 'UserController::delete/$1');
 });
 
-$routes->group('', ['filter' => 'auth', 'namespace' => 'UserShield\UserModule\Controllers'], function($routes) {
+$routes->group('', ['filter' => 'group:user', 'namespace' => 'UserShield\UserModule\Controllers'], function($routes) {
     $routes->get('profile', 'UserController::profile');
     $routes->post('profile/update', 'UserController::updateProfile');
 });
