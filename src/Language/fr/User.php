@@ -22,8 +22,16 @@ return [
     'label_actions'             => "Actions",
     'label_password'            => "Mot de passe",
     'label_password_confirm'    => "Confirmer le mot de passe",
-    'label_password_new'        => "Nouveau mot de passe (laisser vide pour ne pas changer)",
+    'label_password_new'        => "Nouveau mot de passe",
+    'label_password_new_empty'  => "Nouveau mot de passe (laisser vide pour ne pas changer)",
     'label_password_new_confirm' => "Confirmer le nouveau mot de passe",
+    'label_password_current'     => "Mot de passe actuel",
+
+    'label_created_at'         => "Compte créé le",
+
+    'label_title_infos'          => "Informations de base",
+    'label_title_update_profile' => "Mettre à jour mon profil",
+    'label_title_update_pwd'    => "Changer mon mot de passe",
 
     'label_active'              => "Actif",
     'label_inactive'            => "Inactif",
@@ -41,6 +49,7 @@ return [
     'btn_reset'                 => "Envoyer le lien de réinitialisation",
     'btn_return_login'          => "Retour à la connexion",
     'btn_return_users'          => "Retour à la liste des utilisateurs",
+    'btn_update_profile'        => "Mettre à jour mon profil",
 
     // confirm
     'confirm_delete'            => "Êtes-vous sûr de vouloir supprimer cet utilisateur ?",
@@ -74,4 +83,4 @@ return [
     'update_profile_success'    => "Profil mis à jour avec succès",
     'update_password_success'   => "Mot de passe mis à jour avec succès",
 
-    ];
+];
