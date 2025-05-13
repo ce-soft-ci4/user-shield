@@ -1,17 +1,14 @@
 <?php
 
-namespace Controllers;
+namespace UserShield\UserModule\Controllers;
 
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Shield\Entities\User;
-use CodeIgniter\Shield\Models\UserIdentityModel;
-use function App\Controllers\auth;
-use function App\Controllers\config;
-use function App\Controllers\lang;
-use function App\Controllers\log_message;
-use function App\Controllers\redirect;
-use function App\Controllers\service;
-use function App\Controllers\view;
+use Psr\Log\LoggerInterface;
+use UserShield\UserModule\UserModule;
+use CodeIgniter\Events\Events;
 
 /**
  * UserController
@@ -22,18 +19,31 @@ use function App\Controllers\view;
  *
  * @package App\Controllers
  */
-class UserController extends Controller
+class UserController extends BaseController
 {
     protected $users;
     protected $groups;
 
     /**
-     * UserController constructor.
+     * Constructor
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @param LoggerInterface $logger
      */
-    public function __construct()
-    {
+    public function initController(
+        RequestInterface $request,
+        ResponseInterface $response,
+        LoggerInterface $logger
+    ): void {
+        parent::initController(
+            $request,
+            $response,
+            $logger
+        );
+
         $this->users    = auth()->getProvider();
         $this->groups   = config('Config\AuthGroups')->groups;
+
     }
 
     /**
@@ -49,7 +59,7 @@ class UserController extends Controller
         ];
 
         // Get the view
-        return view('users/index', $data);
+        return view('users\index', $data);
     }
 
     /**

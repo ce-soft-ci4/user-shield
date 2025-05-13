@@ -11,6 +11,12 @@ use function App\Filters\site_url;
 
 class AuthFilter implements FilterInterface
 {
+    /**
+     * Before filter method : redirect to login page if not logged in
+     * @param RequestInterface $request
+     * @param $arguments
+     * @return RequestInterface|ResponseInterface|string|void|null
+     */
     public function before(RequestInterface $request, $arguments = null)
     {
         if (!auth()->loggedIn()) {
