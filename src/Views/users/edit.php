@@ -56,7 +56,8 @@
                 <label class="form-label"><?= lang('User.label_groups') ?></label>
                 <?php foreach ($groups as $group=>$detail) : ?>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="groups[]" value="<?= $group ?>" id="group_<?= $group ?>"
+                        <input <?= ($group == 'user')?'disabled checked':''; ?>
+                                class="form-check-input" type="checkbox" name="groups[]" value="<?= $group ?>" id="group_<?= $group ?>"
                             <?= (old('groups') && in_array($group, old('groups'))) || ($user->inGroup($group)) ? 'checked' : '' ?>>
                         <label class="form-check-label" for="group_<?= $group ?>">
                             <?= ucfirst($group) ?>
