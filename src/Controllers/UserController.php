@@ -327,7 +327,6 @@ class UserController extends BaseController
      */
     public function profile()
     {
-        echo 'ici';
         // Get the user
         $user = auth()->user();
 
